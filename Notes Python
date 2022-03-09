@@ -1,0 +1,16 @@
+Order of precedence for arithmetric Operators
+1   ()
+2   **
+3   * % // /
+4   + -
+== for results
+= for association
+
+#Centralizing names within characters
+print('Nice to meet you {:^20}!'.format(nome))
+       name       
+
+# Centralizing names within SPECIFIC characters
+print('Nice to meet you {:=^20}!'.format(nome))
+=======name=======
+

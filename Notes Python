@@ -14,3 +14,25 @@ print('Nice to meet you {:^20}!'.format(nome))
 print('Nice to meet you {:=^20}!'.format(nome))
 =======name=======
 
+Modules
+use as
+       from ast import Index
+from logging import root
+from mmap import PROT_WRITE
+from os import O_WRONLY
+from sys import modules
+import ModName # imports everything
+Or
+       from ModName import UniqueItemWithinModule # imports specific items
+math
+       ceil = rounds up
+       floor = rounds down
+       trunc = removes after the comma
+       pow = power
+       sqrt = square root
+       factorial = factors a number 
+
+Find the libraries at python.org > documentation > modules
+
+PyPI - Python Package Index
+Anything can be found there, or you can create your O_WRONLY

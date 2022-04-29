@@ -429,7 +429,7 @@ button:focus,
 .portfolio-item .portfolio-thumb img {
     height    : auto;
     display   : block;
-    max-width : 100%;
+    max-width : 262.5px;
     }
 
 .portfolio-item .portfolio-info {

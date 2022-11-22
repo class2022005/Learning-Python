@@ -8,10 +8,13 @@
 # NOTE: There is no file to open for this question
 
 def q1(filename, overwrite, bytestowrite):
-    
+    res = 0x00
     if filename == '':
-      return set_bit('00010000', 2) #bitwise 0x1
+      res |= 0x1
+      return res
     if overwrite == True:
-      return set_bit('00010000', 2) #bitwise 0x10
+      res |= 0x10
+      return res
     if bytestowrite > 1000000:
-      return set_bit('001000000', 2) #bitwise 0x20
+      res |= 0x20
+      return res

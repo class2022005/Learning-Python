@@ -13,12 +13,14 @@ def sort_length(filepath):
     stripped = []
     # filepath = list(filepath)
     with open(filepath, 'r+') as fp:
-        for i in fp:
-            stripped.append(str(fp.readlines()[i].strip('\n')))
-        return sorted(stripped,key=len)
+        t = [l.strip() for l in fp.readlines() if l.strip() != ""]
+        t = sorted(t, key = lambda x: len(x), reverse=True)
+        return t
     
+    # t = [l.strip() for l in fp.readlines() if l.strip() != ""] # for each l (line) in fp.readlines(): l will strip the white space for that string, and assign it to the list 't'
+    #     t = sorted(t, key = lambda x: x[9:15])
+    #     return t
     
-    
-filepath = '/Users/hrosso/Sync/Cyber/Learning-Python/Learning-Python/python module/multiple lines'
+filepath = '/home/usacys/Documents/Learning-Python/python module/multiple lines'
 
-sort_length(filepath)
+print(sort_length(filepath))

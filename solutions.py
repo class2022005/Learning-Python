@@ -493,11 +493,86 @@ def diffwords(fname, words):
 
 #Activity 26
 
+
+
 #Activity 27
+def sort_ascii(filepath):
+    '''
+    Read all lines from file in `filepath` and return a list of all lines in case-insensitive ASCII order.
+    Remove all linebreaks before sorting.
+       
+    Args:
+        filepath (str): The path to the file
+    Returns:
+        list : lines from input file sorted into ASCII order without linebreaks
+    '''
+    lst = []
+    
+    with open(filepath, 'r') as fp:
+        t = [l.strip() for l in fp.readlines() if l.strip() != ""]
+        t = sorted(t, key = lambda x: ascii(str.lower(x)))
+        return t
+    
+    
+filepath = 'python module/multiple lines'
+
+print(sort_ascii(filepath))
 
 #Activity 28
+def sort_embedded(filepath):
+    '''
+    Read all lines from file in `filepath` and return a list of all lines sorted numerically by
+    the number at character positions 10 to 15 in each line..
+    Remove all linebreaks before sorting.
+    
+    Example: The embedded number is 561234 below.
+    Here is a561234 long line of text from the file.
+       
+    Args:
+        filepath (str): The path to the file
+    Returns:
+        list : lines from input file numerically sorted on the embedded number without linebreaks
+    '''
+    last = []
+    with open(filepath, 'r') as fp:
+        t = [l.strip() for l in fp.readlines() if l.strip() != ""] # for each l (line) in fp.readlines(): l will strip the white space for that string, and assign it to the list 't'
+
+filepath = '/home/usacys/Documents/Learning-Python/python module/activity29file'
+sort_embedded(filepath)
 
 #Activity 29
+
+def sort_embedded(filepath):
+    '''
+    Read all lines from file in `filepath` and return a list of all lines sorted numerically by
+    the number at character positions 10 to 15 in each line..
+    Remove all linebreaks before sorting.
+    
+    Example: The embedded number is 561234 below.
+    Here is a561234 long line of text from the file.
+       
+    Args:
+        filepath (str): The path to the file
+    Returns:
+        list : lines from input file numerically sorted on the embedded number without linebreaks
+    '''
+    last = []
+    with open(filepath, 'r') as fp:
+        t = fp.readlines"{:04d}".format(p)()
+        t = fp.split('\n')
+        print(t)
+        for lines in fp:def crack(username):
+    pin = '0'
+    login(username, pin)
+        for p in pin:
+            for p in range(0,10000):
+                if login(username,p) == True:
+                    return p
+                else:
+                    pass
+            t = lines[:-2]
+            last.append(sorted(lines,fp[10:16]))
+        return last
 
 #Activity 120
 
@@ -522,3 +597,139 @@ def literals():
     The order is not important. """
     literal = '1000000'
     return [int('0b11110100001001000000', 2), int('0xf4240', 16), 1000000, int('0o3641100', 8)]
+
+#Activity 100
+
+def complexity(password):
+    res = 0b00000000Given a username as a string, crack the user's 4 digit pin by repeatedly calling the provided login function. Incorrect attempts to login will raise PermissionError so this, and only this, exception must be caught. Return the pin used to successfully log in.
+
+login(username,pin)
+   
+Returns True if the username and pin are correct. Otherwise raises PermissionError.
+def crack(username):
+    pass
+    for c in password:
+        if len(password) >= 15:
+            res |= 0b1
+        if c.isdigit():
+            res |= 0b10
+        if c.isupper():
+            res |= 0b100
+        if c.islower():
+            res |= 0b1000
+        if not c.isalnum():
+            res |= 0b10000
+    return res
+
+print(complexity('J0sh1saGassaTH$NG'))
+
+
+#Activity 101
+
+# Given a linux file mode (permissions) as an integer, return the permission string that the mode represents.
+
+# Example 1:
+# mode = 511 
+# 511 == 0b111111111
+# permissons = 'rwxrwxrwx'
+
+# Example 2:
+# mode = 424
+# 424 == 0b110101000w
+    res = ''
+    t = f'{mode:09b}'
+    for i, n in enumerate(t):
+        if n == "1":
+            if int(i) % 3 == 0:
+                res += 'r'
+            if int(i) % 3 == 1:
+                res += 'w'
+            if int(i) % 3 == 2:
+                res += 'x'
+        else:
+            res += '-'
+    return res
+
+mode = 511
+print(perms(mode))
+
+# It is wise to be bitwise
+
+def q1(filename, overwrite, bytestowrite):
+    res = 0x00
+    if filename == '':
+      res |= 0x1
+      return res
+    if overwrite == True:
+      res |= 0x10
+      return res
+    if bytestowrite > 1000000:
+      res |= 0x20
+      return res
+
+#Activity 102
+# Given a username as a string, crack the user's 4 digit pin by repeatedly calling the provided login function. Incorrect attempts to login will raise PermissionError so this, and only this, exception must be caught. Return the pin used to successfully log in.
+# login(username,pin)
+# Returns True if the username and pin are correct. Otherwise raises PermissionError.
+
+def crack(username):
+    pin = '0000'
+    login(username, pin)
+    try:
+        for p in range(0,10000):
+            if login(username,f'{p:04d}') == True:
+                return True
+            else:
+                pass
+    except PermissionError:
+            print('login failed')
+            
+            
+#Activity 103
+# Implement a class called TicTacToe
+# __init__ should not take additional arguments and should be used to initialize the internal state of a game.
+# move should only take a row and col (row 0 and column 0 indicate the upper left corner of the board) and return a value as indicated below.
+#!/usr/bin/env python3
+
+class TicTacToe:
+
+    def __init__(self):
+        pass
+    
+    def move(self,row,col):
+        # Return 1 as an int if player 1 wins as a result of this move
+        # Return 2 as an int if player 2 wins as a result of this move
+        # Return 0 as an int if a draw results from this move
+        # Return None if nothing results from this move
+        # Raise an Exception for invalid moves
+        pass  
+        
+# Foot Stomp
+def tryfile(file, mode):    #attempt == try!!! FOOT STOMP
+    try:
+        fp = open(file,mode)
+    except PermissionError:
+        print('PErmission Denied.')
+    except FileNotFoundError:
+        print('No such file or directory')
+    #except: <- can also be used here
+    except Exception as err:                #Exception is a blanket file
+        print('something happened\n',err)
+    #x mode is when you try to write to a file but you do not have access...it denies you.
+    else:
+        print('No errors!')
+    finally:
+        try:
+            fp.close()
+        except:
+            pass
+        else:
+            print('File CLosed')
+    #Things to trip the blanket exception
+    #1. 'open('/etc/passwd','x')'
+    #2. 'open('/etc')'
+    print('Jobs done!')
+
+if __name__ == '__main__':
+    fm = input("What file and mode do you want to open this file in?\ni.e. '/etc/passwd r")
+    tryFile(*fm)

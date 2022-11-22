@@ -490,9 +490,33 @@ def diffwords(fname, words):
 
 
 #Activity 25
+#!/usr/bin/env python3
+def count_words(filepath):
 
+    dic = {}
+    with open(filepath, 'r') as fp:
+        t = fp.read().split()
+        for w in t:
+            # dic[w] = dic.get(w, 0) + 1
+            if dic.get(w) == None:
+                dic.update({w: 1})
+            else:
+                dic.update({w: dic.get(w)+1})
+        return dic
+    
+    
 #Activity 26
-
+def infinitearguments(*args, **kwargs): #infinitearguments(1,2,3,4,5,6,a=56,b=87,c=89,d=60)
+    # print(*args,sep='\n')
+    for a in args:
+        print(a)
+    for a in sorted(kwargs):
+        print(f'{a}={kwargs[a]}')
+    
+    
+    
+    
+infinitearguments(1,2,3,4,5,6,a=56,d=87,b=89,c=60,e=69,f=80)
 
 
 #Activity 27
@@ -549,17 +573,40 @@ def sort_embedded(filepath):
     Remove all linebreaks before sorting.
     
     Example: The embedded number is 561234 below.
-    Here is a561234 long line of text from the file.
-       
-    Args:
-        filepath (str): The path to the file
-    Returns:
-        list : lines from input file numerically sorted on the embedded number without linebreaks
+    Here is a56#!/usr/bin/env python3
+def count_words(filepath):
+
+    dic = {}
+    with open(filepath, 'r') as fp:
+        t = fp.read().split()
+        for w in t:
+            # dic[w] = dic.get(w, 0) + 1
+            if dic.get(w) == None:
+                dic.update({w: 1})def infinitearguments(*args, **kwargs): #infinitearguments(1,2,3,4,5,6,a=56,b=87,c=89,d=60)
+    # print(*args,sep='\n')
+    for a in args:
+        print(a)
+    for a in sorted(kwargs):
+        print(f'{a}={kwargs[a]}')
+    
+    
+    
+    
+infinitearguments(1,2,3,4,5,6,a=56,d=87,b=89,c=60,e=69,f=80)t file numerically sorted on the embedded number without linebreaks
     '''
     last = []
     with open(filepath, 'r') as fp:
         t = fp.readlines"{:04d}".format(p)()
-        t = fp.split('\n')
+        t = fp.split('\n')def crack(username):
+    while True:
+        try:
+            for p in range(0,10000):
+                pin = str(p).zfill(4)
+                login(username, pin)
+        except PermissionError:
+                print('login failed')
+        else:
+            return pin
         print(t)
         for lines in fp:def crack(username):
     pin = '0'
@@ -594,20 +641,22 @@ def literals():
     the list. All literals will represent the decimal integer value 
     1,000,000 (one million). You must use a literal to represent 
     the target value in binary, hexadecimal, decimal, and octal.
-    The order is not important. """
-    literal = '1000000'
+    The order is not important. """def crack(username):
+    while True:
+        try:
+            for p in range(0,10000):
+                pin = str(p).zfill(4)
+                login(username, pin)
+        except PermissionError:
+                print('login failed')
+        else:
+            return pin
     return [int('0b11110100001001000000', 2), int('0xf4240', 16), 1000000, int('0o3641100', 8)]
 
 #Activity 100
 
 def complexity(password):
-    res = 0b00000000Given a username as a string, crack the user's 4 digit pin by repeatedly calling the provided login function. Incorrect attempts to login will raise PermissionError so this, and only this, exception must be caught. Return the pin used to successfully log in.
-
-login(username,pin)
-   
-Returns True if the username and pin are correct. Otherwise raises PermissionError.
-def crack(username):
-    pass
+    res = 0b00000000
     for c in password:
         if len(password) >= 15:
             res |= 0b1
@@ -629,10 +678,19 @@ print(complexity('J0sh1saGassaTH$NG'))
 # Given a linux file mode (permissions) as an integer, return the permission string that the mode represents.
 
 # Example 1:
-# mode = 511 
-# 511 == 0b111111111
-# permissons = 'rwxrwxrwx'
+# mode = 511 #!/usr/bin/env python3
+def count_words(filepath):
 
+    dic = {}
+    with open(filepath, 'r') as fp:
+        t = fp.read().split()
+        for w in t:
+            # dic[w] = dic.get(w, 0) + 1
+            if dic.get(w) == None:
+                dic.update({w: 1})
+            else:
+                dic.update({w: dic.get(w)+1})
+        return dic
 # Example 2:
 # mode = 424
 # 424 == 0b110101000w
@@ -673,17 +731,16 @@ def q1(filename, overwrite, bytestowrite):
 # Returns True if the username and pin are correct. Otherwise raises PermissionError.
 
 def crack(username):
-    pin = '0000'
-    login(username, pin)
-    try:
-        for p in range(0,10000):
-            if login(username,f'{p:04d}') == True:
-                return True
-            else:
-                pass
-    except PermissionError:
+    p = 0
+    while True:
+        pin = str(p).zfill(4)
+        try:
+            login(username, pin)
+        except PermissionError:
             print('login failed')
-            
+            p += 1
+        else:
+            return pin
             
 #Activity 103
 # Implement a class called TicTacToe
@@ -733,3 +790,14 @@ def tryfile(file, mode):    #attempt == try!!! FOOT STOMP
 if __name__ == '__main__':
     fm = input("What file and mode do you want to open this file in?\ni.e. '/etc/passwd r")
     tryFile(*fm)
+    
+    
+    
+#Activity 104
+
+
+
+#Activity 105
+
+
+#Activity 106

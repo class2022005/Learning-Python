@@ -5,12 +5,12 @@ def count_words(filepath):
     with open(filepath, 'r') as fp:
         t = fp.read().split()
         for w in t:
-            if i in w:
-                dic[i] = dic[w] +1
+            # dic[w] = dic.get(w, 0) + 1
+            if dic.get(w) == None:
+                dic.update({w: 1})
             else:
-                dic[i] += 1
+                dic.update({w: dic.get(w)+1})
         return dic
-    
     '''
     Count the occurrences of each word in the file. Create a dictionary that contains each word in the file as a key
     and the value for each key will contain the number of times each words is found in the file. Words will be

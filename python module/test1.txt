@@ -1,0 +1,6 @@
+for 
+foo 
+in 
+bar 
+print 
+foo 
